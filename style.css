@@ -1,0 +1,41 @@
+﻿.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.section-top {
+	padding-bottom: 70px;
+}
+
+.section-middle {
+	padding-bottom: 40px;
+}
+
+.label {
+	padding: 10px 20px;
+	margin: 0 5px;
+}
+
+#js-newGameButton {
+	margin-top: 10px;
+}
+
+#js-playerPickElement, #js-resultsTableElement {
+	display: none;
+}
+
+/* MAINTENANCE BORDERS ;)
+
+.col-xs-2, .col-xs-5 {
+	border: 1px solid black;
+}
+
+section {
+	border: 1px solid black;
+}
+
+*/
