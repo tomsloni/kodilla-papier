@@ -23,19 +23,3 @@
 #js-newGameButton {
 	margin-top: 10px;
 }
-
-#js-playerPickElement, #js-resultsTableElement {
-	display: none;
-}
-
-/* MAINTENANCE BORDERS ;)
-
-.col-xs-2, .col-xs-5 {
-	border: 1px solid black;
-}
-
-section {
-	border: 1px solid black;
-}
-
-*/
