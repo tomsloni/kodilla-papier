@@ -86,8 +86,6 @@ function getComputerPick() {
 	return possiblePicks[Math.floor(Math.random()*3)];
 }
 
-
-
 function checkRoundWinner(playerPick, computerPick) {
 	playerResultElem.innerHTML = computerResultElem.innerHTML = '';
 
@@ -96,6 +94,9 @@ function checkRoundWinner(playerPick, computerPick) {
 		winnerIs = 'noone';
 		playerResultElem.innerHTML = 'Remis!';
 		computerResultElem.innerHTML = 'Remis!';
+		// dodatkowe punkty za remis
+		player.score++;
+		computer.score++;
 
 	} else if (
 		(computerPick == 'rock' && playerPick == 'scissors') ||
@@ -115,7 +116,11 @@ function checkRoundWinner(playerPick, computerPick) {
 
 	setGamePoints();
 
-	if (computer.score == 10) {
+	if (computer.score == 10 && player.score == 10) {
+		window.alert('REMIS!');
+		gameState = 'ended';
+		setGameElements();
+	} else if (computer.score == 10) {
 		window.alert('Wygrał komputer');
 		gameState = 'ended';
 		setGameElements();
@@ -123,11 +128,10 @@ function checkRoundWinner(playerPick, computerPick) {
 		window.alert(player.name + '! Zwycięstwo!');
 		gameState = 'ended';
 		setGameElements();		
-	}
+	} 
 }
 
 function playerPick(playerPick) {
-	console.log(playerPick);
 	var computerPick = getComputerPick();
 
 	if (playerPick == 'scissors') {
@@ -148,14 +152,7 @@ function playerPick(playerPick) {
 
 	computerPickElem.appendChild(computerPickIcon);
 	playerPickElem.appendChild(playerPickIcon);
-
-/*
-	playerPickElem.innerHTML = playerPick;
-	computerPickElem.innerHTML = computerPick;
-*/
 	checkRoundWinner(playerPick, computerPick);
 }
-
-
 
 setGameElements();
